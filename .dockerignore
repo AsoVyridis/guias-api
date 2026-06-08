@@ -1,0 +1,7 @@
+target/
+.git/
+.aws/
+temporal_efs/
+*.iml
+.idea/
+.vscode/

@@ -1,0 +1,4 @@
+ID: 123
+Transportista: transportistaX
+Fecha: 20260608
+Contenido: 100 cajas de fruta
