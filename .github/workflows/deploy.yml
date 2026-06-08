@@ -22,8 +22,7 @@ jobs:
       with:
         context: .
         push: true
-        # Cambia "tu_usuario_docker" por tu usuario real de Docker Hub
-        tags: Vyridids/guias-api:latest
+        tags: vyridids/guias-api:latest 
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,9 +40,9 @@ jobs:
             sudo apt-get update && sudo apt-get install -y docker.io
           fi
           
-          sudo docker pull Vyridids/guias-api:latest
+          sudo docker pull vyridids/guias-api:latest 
           
           sudo docker stop contenedor-guias || true
           sudo docker rm contenedor-guias || true
           
-          sudo docker run -d -p 8080:8080 --name contenedor-guias -v /mnt/efs/fs1:/app/temporal_efs Vyridids/guias-api:latest
+          sudo docker run -d -p 8080:8080 --name contenedor-guias -v /mnt/efs/fs1:/app/temporal_efs vyridids/guias-api:latest 
