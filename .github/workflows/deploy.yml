@@ -23,7 +23,7 @@ jobs:
         context: .
         push: true
         # Cambia "tu_usuario_docker" por tu usuario real de Docker Hub
-        tags: tu_usuario_docker/guias-api:latest
+        tags: Vyridids/guias-api:latest
 
   deploy:
     runs-on: ubuntu-latest
