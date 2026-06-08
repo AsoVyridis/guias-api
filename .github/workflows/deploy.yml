@@ -47,6 +47,8 @@ jobs:
           
           sudo docker run -d -p 8080:8080 \
             --name contenedor-guias \
-            -e SPRING_APPLICATION_JSON='{"aws":{"s3":{"bucket":"guias-despacho-diego-jimenez"}}}' \
+            -e BUCKET_NAME="guias-despacho-diego-jimenez" \
+            -e AWS_S3_BUCKET="guias-despacho-diego-jimenez" \
+            -e AWS_BUCKET="guias-despacho-diego-jimenez" \
             -v /mnt/efs/fs1:/app/temporal_efs \
             vyridids/guias-api:latest

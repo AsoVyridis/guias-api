@@ -64,8 +64,8 @@ public class GuiaController {
             // Estructura requerida: /fecha/transportista/archivo
             String rutaDestinoS3 = fecha + "/" + transportista + "/" + nombreArchivo;
             
-            // REMPLAZA ESTO: Pon el nombre exacto de tu Bucket de AWS Labs
-            String nombreBucket = "tu-nombre-de-bucket-unico"; 
+            // Obtener el nombre del bucket desde la variable de entorno configurada en Docker/EC2
+            String nombreBucket = System.getenv("BUCKET_NAME"); 
 
             try {
                 // El cliente se construye solo buscando el archivo ~/.aws/credentials automáticamente
