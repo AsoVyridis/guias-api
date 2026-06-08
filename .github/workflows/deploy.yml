@@ -41,11 +41,9 @@ jobs:
             sudo apt-get update && sudo apt-get install -y docker.io
           fi
           
-          # Cambia "Vyridids" por tu usuario real de Docker Hub
-          sudo docker pull tu_usuario_docker/guias-api:latest
+          sudo docker pull Vyridids/guias-api:latest
           
           sudo docker stop contenedor-guias || true
           sudo docker rm contenedor-guias || true
           
-          # Cambia "Vyridids" por tu usuario real de Docker Hub
-          sudo docker run -d -p 8080:8080 --name contenedor-guias -v /mnt/efs/fs1:/app/temporal_efs tu_usuario_docker/guias-api:latest
+          sudo docker run -d -p 8080:8080 --name contenedor-guias -v /mnt/efs/fs1:/app/temporal_efs Vyridids/guias-api:latest
