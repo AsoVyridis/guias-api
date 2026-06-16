@@ -67,6 +67,13 @@ public class GuiaController {
             // Obtener el nombre del bucket desde la variable de entorno configurada en Docker/EC2
             String nombreBucket = System.getenv("BUCKET_NAME"); 
 
+            // Log de depuración
+            System.out.println("DEBUG: Intentando subir al bucket: [" + nombreBucket + "]");
+            
+            if (nombreBucket == null || nombreBucket.isEmpty()) {
+                return ResponseEntity.internalServerError().body("Error: La variable de entorno BUCKET_NAME no está definida.");
+            }
+
             try {
                 // El cliente se construye solo buscando el archivo ~/.aws/credentials automáticamente
                 S3Client s3 = S3Client.builder()
